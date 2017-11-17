@@ -1,27 +1,33 @@
 @charset "UTF-8";
 
-.linenums ol > li {
+ol.linenums > li {
 	color: #bebec5;
 	line-height: 20px;
 	list-style: decimal;
 }
 pre.scp {
+    color: #fff;
+	border: 0px solid #000000;
+	background: transparent;
+}
+pre.scp > code {
 	border: 1px solid #d6d6d6;
     background: #333;
-    color: #fff;
+    font-size:   12px;
+    font-weight: normal;
+	display: block;
+	position: relative;
 
-    padding: 0.5em 0;
+    padding: 1.0em;
     border-radius: 0.5em;
     -moz-border-radius: 0.5em;
     -webkit-border-radius: 0.5em;
     -o-border-radius: 0.5em;
     -ms-border-radius: 0.5em;
 }
-pre.scp > code {
-    font-size:   12px;
-    font-weight: normal;
-	display: block;
-	position: relative;
+pre.scp > code > ol {
+	margin-left: -1em;
+	margin-right: -1em;
 }
 
 pre.scp > code:after {
@@ -29,42 +35,45 @@ pre.scp > code:after {
 	position: absolute;
 	right: 0.5em;
 	top: 0;
-	opacity: 0.4;
+	opacity: 0.6;
 }
 pre.scp > code.lang-css:after {
-	content: "css";
+	content: "CSS";
 }
 pre.scp > code.lang-js:after {
-	content: "js";
+	content: "JavaScript";
 }
 pre.scp > code.lang-java:after {
-	content: "java";
+	content: "Java";
 }
 pre.scp > code.lang-php:after {
-	content: "php";
+	content: "PHP";
 }
 pre.scp > code.lang-cpp:after {
-	content: "cpp";
+	content: "C++";
 }
 pre.scp > code.lang-c:after {
-	content: "c";
+	content: "C";
 }
 pre.scp > code.lang-csh:after {
-	content: "c#";
+	content: "C#";
+}
+pre.scp > code.lang-bsh:after {
+	content: "BASH";
 }
 pre.scp > code.lang-sh:after {
-	content: "sh";
+	content: "BASH";
 }
 pre.scp > code.lang-sql:after {
-	content: "sql";
+	content: "SQL";
 }
 pre.scp > code.lang-vb:after {
-	content: "vb";
+	content: "Visual Basic";
 }
 pre.scp > code.lang-xml:after {
-	content: "xml";
+	content: "XML";
 }
 pre.scp > code.lang-html:after {
-	content: "html";
+	content: "HTML";
 }
 
