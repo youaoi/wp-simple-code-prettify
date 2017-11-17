@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+.linenums ol > li {
+	color: #bebec5;
+	line-height: 20px;
+	list-style: decimal;
+}
+pre.scp {
+	border: 1px solid #d6d6d6;
+    background: #333;
+    color: #fff;
+
+    padding: 0.5em 0;
+    border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+    -ms-border-radius: 0.5em;
+}
+pre.scp > code {
+    font-size:   12px;
+    font-weight: normal;
+	display: block;
+	position: relative;
+}
+
+pre.scp > code:after {
+	content: "";
+	position: absolute;
+	right: 0.5em;
+	top: 0;
+	opacity: 0.4;
+}
+pre.scp > code.lang-css:after {
+	content: "css";
+}
+pre.scp > code.lang-js:after {
+	content: "js";
+}
+pre.scp > code.lang-java:after {
+	content: "java";
+}
+pre.scp > code.lang-php:after {
+	content: "php";
+}
+pre.scp > code.lang-cpp:after {
+	content: "cpp";
+}
+pre.scp > code.lang-c:after {
+	content: "c";
+}
+pre.scp > code.lang-csh:after {
+	content: "c#";
+}
+pre.scp > code.lang-sh:after {
+	content: "sh";
+}
+pre.scp > code.lang-sql:after {
+	content: "sql";
+}
+pre.scp > code.lang-vb:after {
+	content: "vb";
+}
+pre.scp > code.lang-xml:after {
+	content: "xml";
+}
+pre.scp > code.lang-html:after {
+	content: "html";
+}
+

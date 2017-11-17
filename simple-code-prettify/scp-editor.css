@@ -1,0 +1,62 @@
+@charset "UTF-8";
+pre.scp {
+	margin: 15px auto;
+	font:   12px/20px 'courier new';
+	border: 1px solid #d6d6d6;
+	background: #fbfbfb;
+	padding:    10px 15px;
+	border-left-width: 4px;
+}
+
+pre.scp > code {
+	padding: 0;
+	background: transparent;
+	display: block;
+	position: relative;
+}
+
+pre.scp > code:after {
+	content: "";
+	position: absolute;
+	right: 0;
+	top: 0;
+	opacity: 0.4;
+}
+pre.scp > code.lang-css:after {
+	content: "css";
+}
+pre.scp > code.lang-js:after {
+	content: "js";
+}
+pre.scp > code.lang-java:after {
+	content: "java";
+}
+pre.scp > code.lang-php:after {
+	content: "php";
+}
+pre.scp > code.lang-cpp:after {
+	content: "cpp";
+}
+pre.scp > code.lang-c:after {
+	content: "c";
+}
+pre.scp > code.lang-csh:after {
+	content: "c#";
+}
+pre.scp > code.lang-sh:after {
+	content: "sh";
+}
+pre.scp > code.lang-sql:after {
+	content: "sql";
+}
+pre.scp > code.lang-vb:after {
+	content: "vb";
+}
+pre.scp > code.lang-xml:after {
+	content: "xml";
+}
+pre.scp > code.lang-html:after {
+	content: "html";
+}
+
+
