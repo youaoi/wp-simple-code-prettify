@@ -18,13 +18,9 @@
 
   $(function(){
     var form = $('<div>').attr('id', 'scp-e-form');
-    $('<textarea>').attr('id', 'scp-e-code').attr('name', 'code')
-      .css('width', '100%').css('height', '85%').css('margin', '10px 0')
-      .attr('placeholder', 'Paste or enter the code here.')
-      .appendTo(form);
     $('<select>').attr('id', 'scp-e-lang').attr('name', 'lang')
-      .css('float', 'left')
-      .append($('<option>').attr('value', '').text('- LANGUAGE AUTO -'))
+      .css('float', 'left').attr('accesskey', 'l')
+      .append($('<option>').attr('value', '').text('- Language select -'))
       .append($('<option>').attr('value', 'lang-sh' ).text('BASH'))
       .append($('<option>').attr('value', 'lang-c'  ).text('C'))
       //.append($('<option>').attr('value', 'lang-cc' ).text('CC'))
@@ -43,10 +39,21 @@
       .append($('<option>').attr('value', 'lang-vb').text('Visual BASIC'))
       //.append($('<option>').attr('value', 'lang-').text(''))
       .appendTo(form);
+
     $('<input>').attr('id', 'scp-e-submit').attr('name', 'submit').attr('type', 'button')
       .css('float', 'right')
-      .attr('addClass', 'button-primary').attr('value', 'Insert Code')
+      .attr('addClass', 'button-primary').attr('accesskey', 'i')
+      .attr('value', 'Insert this code')
       .appendTo(form);
+
+    $('<br>').css('clear', 'both')
+      .appendTo(form);
+
+    $('<textarea>').attr('id', 'scp-e-code').attr('name', 'code')
+      .css('width', '100%').css('height', '85%').css('margin', '10px 0')
+      .attr('placeholder', 'Paste or enter the code here.').attr('accesskey', 'p')
+      .appendTo(form);
+      
     form.appendTo('body').hide();
     form.find('#scp-e-submit').click(function(){
       var shortcode = '<pre class="scp"><code class="prettyprint linenums ' + $('#scp-e-lang').val() + '">' + cleanhtml($('#scp-e-code').val()) + '</code></pre>';

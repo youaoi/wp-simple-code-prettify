@@ -23,6 +23,7 @@ function scp_wp_enqueue_scripts() {
 
 add_action('after_setup_theme', 'scp_after_setup_theme');
 function scp_after_setup_theme() {
+    add_editor_style(plugins_url('simple-code-prettify.css', __FILE__));
     add_editor_style(plugins_url('scp-editor.css', __FILE__));
 }
 
