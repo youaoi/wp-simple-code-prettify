@@ -1,20 +1,20 @@
 @charset "UTF-8";
 
 pre.scp {
-    color: #000;
+	color: #000;
 	margin: 0.5em auto;
 	font:   12px/20px 'courier new';
 }
 
 pre.scp > code {
-    color: #000;
+	color: #000;
 	background: #fbfbfb;
 	border: 1px solid #d6d6d6;
 	border-left-width: 4px;
 
-    border-radius: 0.0em;
-    -moz-border-radius: 0.0em;
-    -webkit-border-radius: 0.0em;
-    -o-border-radius: 0.0em;
-    -ms-border-radius: 0.0em;
+	border-radius: 0.0em;
+	-moz-border-radius: 0.0em;
+	-webkit-border-radius: 0.0em;
+	-o-border-radius: 0.0em;
+	-ms-border-radius: 0.0em;
 }

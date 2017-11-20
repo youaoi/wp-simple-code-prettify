@@ -5,25 +5,52 @@ ol.linenums > li {
 	line-height: 20px;
 	list-style: decimal;
 }
+code.prettyprint {
+	overflow-x: auto;
+}
+
+div.scp-title {
+	position: relative;
+	z-index: 10;
+	display: block;
+
+	color: #333;
+	border: 1px solid #d6d6d6;
+	border-bottom-width: 0px;
+	background: #ddd;
+
+	font-size: 0.7em;
+	margin: 0 0.5em;
+	padding: 0.2em 0.6em 0.2em 0.6em;
+	line-height: 1.2em;
+	width: fit-content;
+}
 pre.scp {
-    color: #fff;
+	color: #fff;
 	border: 0px solid #000000;
 	background: transparent;
+	font-size: 10px;
+	line-height: 1em;
 }
+div.scp-title + pre.scp {
+	margin-top: -1px;
+}
+
 pre.scp > code {
-	border: 1px solid #d6d6d6;
-    background: #333;
-    font-size:   12px;
-    font-weight: normal;
-	display: block;
 	position: relative;
 
-    padding: 1.0em;
-    border-radius: 0.5em;
-    -moz-border-radius: 0.5em;
-    -webkit-border-radius: 0.5em;
-    -o-border-radius: 0.5em;
-    -ms-border-radius: 0.5em;
+	border: 1px solid #d6d6d6;
+	background: #333;
+	font-size:   12px;
+	font-weight: normal;
+	display: block;
+
+	padding: 1.0em;
+	border-radius: 0.5em;
+	-moz-border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	-o-border-radius: 0.5em;
+	-ms-border-radius: 0.5em;
 }
 pre.scp > code > ol {
 	margin-left: -1em;
@@ -34,7 +61,7 @@ pre.scp > code:after {
 	content: "";
 	position: absolute;
 	right: 0.5em;
-	top: 0;
+	top: 2px;
 	opacity: 0.6;
 }
 pre.scp > code.lang-css:after {
