@@ -7,6 +7,9 @@ ol.linenums > li {
 }
 code.prettyprint {
 	overflow-x: auto;
+	
+	tab-size: 4;
+	-moz-tab-size: 4;
 }
 
 div.scp-title {
