@@ -65,6 +65,8 @@ pre.scp > code:after {
 	position: absolute;
 	right: 0.5em;
 	top: 2px;
+	
+	line-height: 1em;
 	opacity: 0.6;
 }
 pre.scp > code.lang-css:after {

@@ -5,8 +5,12 @@
         icon: 'icon fa fa-scp',
         onclick: function() {
           var width = $(window).width(), H = $(window).height(), W = ( 720 < width ) ? 720 : width;
-          W = W - 40; H = H - 84;
-          tb_show('Insert Code', '#TB_inline?width=' + W + '&height=' + H + '&inlineId=scp-e-form');
+          W = W - 40; H = H - 100;
+          tb_show('Insert code dialog', '#TB_inline?inlineId=scp-e-form');
+          $('#TB_ajaxContent').width('100%').height('100%')
+            .css('height', 'calc(100% - ' + ($('#TB_ajaxWindowTitle').height() + 1) + 'px)')
+            .css('padding', '1em').css('margin', '0')
+            .css('box-sizing', 'border-box');
           $('#scp-e-code').val("");
           $('#scp-e-title').val("");
           $('#scp-e-title').focus();
@@ -20,7 +24,7 @@
     $('<input>').attr('id', 'scp-e-title').attr('name', 'title').attr('type', 'text')
       .css('width', '100%').css('display', 'block')
       .attr('placeholder', 'Code Title')
-      .attr('accesskey', 't')
+      .attr('accesskey', 'c')
       .attr('tabindex', '101')
       .appendTo(form);
 
@@ -60,8 +64,9 @@
       .appendTo(form);
 
     $('<textarea>').attr('id', 'scp-e-code').attr('name', 'code')
-      .css('width', '100%').css('height', '85%').css('margin', '10px 0')
+      .css('width', '100%').css('height', 'calc(100% - 70px)').css('margin', '1px 1px 0 1px')
       .attr('placeholder', 'Paste or enter the code here.')
+      .attr('spellcheck', 'false')
       .attr('accesskey', 'p')
       .attr('tabindex', '103')
       .appendTo(form);
