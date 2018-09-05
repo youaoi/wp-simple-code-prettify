@@ -19,14 +19,14 @@
   });
 
   $(function(){
-    var form = $('<div>').attr('id', 'scp-e-form');
+    const $form = $('<div>').attr('id', 'scp-e-form');
 
     $('<input>').attr('id', 'scp-e-title').attr('name', 'title').attr('type', 'text')
       .css('width', '100%').css('display', 'block')
       .attr('placeholder', 'Code Title')
       .attr('accesskey', 'c')
       .attr('tabindex', '101')
-      .appendTo(form);
+      .appendTo($form);
 
     $('<select>').attr('id', 'scp-e-lang').attr('name', 'lang')
       .css('float', 'left')
@@ -50,7 +50,7 @@
       //.append($('<option>').attr('value', 'lang-').text(''))
       .attr('accesskey', 'l')
       .attr('tabindex', '102')
-      .appendTo(form);
+      .appendTo($form);
 
     $('<input>').attr('id', 'scp-e-submit').attr('name', 'submit').attr('type', 'button')
       .css('float', 'right')
@@ -58,10 +58,10 @@
       .attr('value', 'Insert this code')
       .attr('accesskey', 'i')
       .attr('tabindex', '104')
-      .appendTo(form);
+      .appendTo($form);
 
     $('<br>').css('clear', 'both')
-      .appendTo(form);
+      .appendTo($form);
 
     $('<textarea>').attr('id', 'scp-e-code').attr('name', 'code')
       .css('width', '100%').css('height', 'calc(100% - 70px)').css('margin', '1px 1px 0 1px')
@@ -69,26 +69,27 @@
       .attr('spellcheck', 'false')
       .attr('accesskey', 'p')
       .attr('tabindex', '103')
-      .appendTo(form);
+      .appendTo($form);
       
-    form.appendTo('body').hide();
-    form.find('#scp-e-submit').click(function(){
-      var div = $('<div>');
-
-      var pre = $('<pre>').addClass('scp');
-      pre.appendTo(div);
+    $form.appendTo('body').hide();
+    $form.find('#scp-e-submit').click(function() {
+      const $div = $('<div>');
+      const $pre = $('<pre>').addClass('scp');
+      $pre.appendTo($div);
 
       if ($('#scp-e-title').val().length > 0) {
         //pre.attr('title', escape($('#scp-e-title').val()));//
         $('<div>').addClass('scp-title')
           .text($('#scp-e-title').val())
-          .prependTo(div);
+          .prependTo($div);
       }
       $('<code>').addClass('prettyprint').addClass('linenums').addClass($('#scp-e-lang').val())
         //.html(escape($('#scp-e-code').val()))
         .text($('#scp-e-code').val())
-        .appendTo(pre);
-      tinyMCE.activeEditor.execCommand('mceInsertRawHTML', 0, div.html());
+        .appendTo($pre);
+
+      //tinyMCE.activeEditor.execCommand('mceInsertRawHTML', 0, $div.html());
+      tinyMCE.activeEditor.execCommand('mceInsertContent', false, $div.html());
       tb_remove();
     });
   });
