@@ -1,4 +1,5 @@
 (function($){
+
   tinymce.PluginManager.add('scpEditor', function( editor, url ) {
     editor.addButton('scpInputCode', {
         title: 'Insert Code',
@@ -6,7 +7,7 @@
         onclick: function() {
           var width = $(window).width(), H = $(window).height(), W = ( 720 < width ) ? 720 : width;
           W = W - 40; H = H - 100;
-          tb_show('Insert code dialog', '#TB_inline?inlineId=scp-e-form');
+          tb_show('Insert code dialog (After inserting the code, please press [Shift + Enter] to continue writing.)', '#TB_inline?inlineId=scp-e-form');
           $('#TB_ajaxContent').width('100%').height('100%')
             .css('height', 'calc(100% - ' + ($('#TB_ajaxWindowTitle').height() + 1) + 'px)')
             .css('padding', '1em').css('margin', '0')
@@ -89,11 +90,27 @@
         .appendTo($pre);
 
       //tinyMCE.activeEditor.execCommand('mceInsertRawHTML', 0, $div.html());
-      tinyMCE.activeEditor.execCommand('mceInsertContent', false, $div.html());
+      tinyMCE.activeEditor.execCommand('mceInsertContent', false, $div.html() + "\n\n");
       tb_remove();
     });
   });
 
+  // spellcheck off
+  $(function(){
+    const si = setInterval(function(){
+      const $editor = $('#content_ifr');
+      if (! $editor.length) return;
+
+      const editorDocument = $editor[0].contentWindow.document;
+      const $body = $('body', editorDocument);
+      if (! $body.length) return;
+
+      console.debug('rich editor spellcheck off', [$body[0]]);
+      $body.attr('spellcheck', false);
+      
+      clearInterval(si);
+    }, 500);
+  });
   /*
   function escape(s) {
     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
